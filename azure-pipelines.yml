@@ -33,4 +33,8 @@ steps:
     minorVersion: '0'
     patchVersion: '0'
 
-#- script: dotnet pack /p:PackageVersion=1.0.$(Build.BuildNumber) --output $(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'DynamoCode.Core'
+    publishLocation: 'Container'
