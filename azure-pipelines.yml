@@ -10,15 +10,24 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  buildConfig: 'Release'
+  BuildConfiguration: 'Release'
+
 
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    arguments: '-c $(buildConfig)'
+    arguments: '-c $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
     projects: '**/*Tests/*.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'nuget/DynamoCode.Core/DynamoCode.Core.csproj'
+    versioningScheme: 'byBuildNumber'
+
+#- script: dotnet pack /p:PackageVersion=1.0.$(Build.BuildNumber) --output $(Build.ArtifactStagingDirectory)'
