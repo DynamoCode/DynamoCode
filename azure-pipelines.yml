@@ -28,6 +28,9 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 'nuget/DynamoCode.Core/DynamoCode.Core.csproj'
-    versioningScheme: 'byBuildNumber'
+    versioningScheme: 'byPrereleaseNumber'
+    majorVersion: '1'
+    minorVersion: '0'
+    patchVersion: '0'
 
 #- script: dotnet pack /p:PackageVersion=1.0.$(Build.BuildNumber) --output $(Build.ArtifactStagingDirectory)'
