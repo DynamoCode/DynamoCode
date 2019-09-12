@@ -29,9 +29,9 @@ steps:
     command: 'pack'
     packagesToPack: 'nuget/DynamoCode.Core/DynamoCode.Core.csproj'
     versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
+    majorVersion: '$(Major)'
+    minorVersion: '$(Minor)'
+    patchVersion: '$(Patch)'
 
 - task: PublishBuildArtifacts@1
   inputs:
