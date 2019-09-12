@@ -11,13 +11,14 @@ pool:
 
 variables:
   BuildConfiguration: 'Release'
+  Version: $(Major).$(Minor).$(Patch)-alpha1
 
 
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    arguments: '-c $(BuildConfiguration) /p:Version=$(Major).$(Minor).$(Patch)'
+    arguments: '-c $(BuildConfiguration) /p:Version=$(Version)'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -29,7 +30,7 @@ steps:
     command: 'pack'
     packagesToPack: 'nuget/DynamoCode.Core/DynamoCode.Core.csproj'
     versioningScheme: 'off'
-    buildProperties: 'PackageVersion=$(Major).$(Minor).$(Patch)'
+    buildProperties: 'PackageVersion=$(Version)'
 
 - task: PublishBuildArtifacts@1
   inputs:
