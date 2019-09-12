@@ -29,6 +29,7 @@ steps:
     command: 'pack'
     packagesToPack: 'nuget/DynamoCode.Core/DynamoCode.Core.csproj'
     versioningScheme: 'off'
+    buildProperties: '-p:PackageVersion=$(Major).$(Minor).$(Patch)'
 
 - task: PublishBuildArtifacts@1
   inputs:
