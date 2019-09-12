@@ -17,7 +17,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    arguments: '-c $(BuildConfiguration)'
+    arguments: '-c $(BuildConfiguration) /p:Version=$(Major).$(Minor).$(Patch)'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -28,10 +28,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 'nuget/DynamoCode.Core/DynamoCode.Core.csproj'
-    versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '$(Major)'
-    minorVersion: '$(Minor)'
-    patchVersion: '$(Patch)'
+    versioningScheme: 'off'
 
 - task: PublishBuildArtifacts@1
   inputs:
