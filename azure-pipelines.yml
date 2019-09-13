@@ -3,7 +3,8 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)--$(Major).$(Minor).$(Patch)
+# name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)--$(Major).$(Minor)
+name: $(Major).$(Minor).$(rev:rrr)
 
 trigger:
 - master
@@ -20,7 +21,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    arguments: '-c $(BuildConfiguration) /p:Version=$(Version)'
+    arguments: '-c $(BuildConfiguration) /p:Version=$(Build.BuildNumber)'
 
 - task: DotNetCoreCLI@2
   inputs:
