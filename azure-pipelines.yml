@@ -3,7 +3,7 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: 1.0.$(rev:rrr)
+name: 1.0.$(rev:rrr)-alpha1
 
 trigger:
 - master
@@ -13,8 +13,6 @@ pool:
 
 variables:
   BuildConfiguration: 'Release'
-  Version: $(Build.BuildNumber)-alpha1
-
 
 steps:
 - task: DotNetCoreCLI@2
