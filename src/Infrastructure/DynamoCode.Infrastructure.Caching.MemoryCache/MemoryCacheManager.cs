@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Benetech.Infrastructure.Caching.MemoryCache
+namespace DynamoCode.Infrastructure.Caching.MemoryCache
 {
     /// <summary>
     /// Represents a MemoryCacheCache
