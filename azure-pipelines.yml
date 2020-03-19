@@ -3,16 +3,18 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: 1.0.0.$(rev:r)-alpha1
+name: $(majorMinorVersion)-alpha.$(revision)
+
+variables:
+  majorMinorVersion: 0.0.0
+  revision: $[counter(variables['majorMinorVersion'], 0)]
+  BuildConfiguration: 'Release'
 
 trigger:
 - master
 
 pool:
   vmImage: 'ubuntu-latest'
-
-variables:
-  BuildConfiguration: 'Release'
 
 steps:
 - task: DotNetCoreCLI@2
