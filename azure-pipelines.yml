@@ -27,6 +27,7 @@ steps:
     command: 'test'
     projects: '**/*Tests/*.csproj'
 
+# To be removed soon
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
@@ -34,12 +35,29 @@ steps:
     versioningScheme: 'off'
     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
+# Infrastructure package 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
     packagesToPack: 'nuget/DynamoCode.Infrastructure/DynamoCode.Infrastructure.csproj'
     versioningScheme: 'off'
     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
+
+# Domain package
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'src/Domain/DynamoCode.Domain/DynamoCode.Domain.csproj'
+    versioningScheme: 'off'
+    buildProperties: 'PackageVersion=$(Build.BuildNumber)'
+
+# # Application package
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: 'pack'
+#     packagesToPack: 'src/Application/DynamoCode.Application/DynamoCode.Application.csproj'
+#     versioningScheme: 'off'
+#     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
 - task: PublishBuildArtifacts@1
   inputs:
