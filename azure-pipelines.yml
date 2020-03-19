@@ -34,8 +34,15 @@ steps:
     versioningScheme: 'off'
     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'nuget/DynamoCode.Infrastructure/DynamoCode.Infrastructure.csproj'
+    versioningScheme: 'off'
+    buildProperties: 'PackageVersion=$(Build.BuildNumber)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'DynamoCode.Core'
+    ArtifactName: 'DynamoCodePackages'
     publishLocation: 'Container'
