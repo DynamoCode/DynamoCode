@@ -8,8 +8,8 @@ We have chosen Domain Driven Design to create a base architecture implementation
 
 We also provide an opinionated yet flexible way to structure an application following good practices and design concepts.
 
-* [Quick overview of Domain Driven Design](domain-driven-design.md)
-* [Our vision of Layered Architecture](layered-architecture.md)
+* [Quick overview of Domain Driven Design](docs/domain-driven-design.md)
+* [Our vision of Layered Architecture](docs/layered-architecture.md)
 
 # Application structure
 
