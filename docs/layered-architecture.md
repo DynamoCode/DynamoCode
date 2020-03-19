@@ -1,6 +1,6 @@
 # Layered Architecture
 
-![layered architecture](images/layered-architecture.png)
+![layered architecture](/docs/images/layered-architecture.png)
 
 This architecture is based on the Hexagonal Architecture (Ports and Adaptors).To support the separation of concerns, there are layers to express the different responsibilities of an application. 
 
@@ -35,5 +35,5 @@ interfaces.
 
 When communicating across layers, to prevent exposing the details of the domain model to the outside world, never pass domain objects across boundaries. Instead, use simple data transfer objects (DTOs), presentation models (view models), and application event objects to communicate changes or actions in the domain.
 
-![Inside a bounded context](images/inside-a-bounded-context.png)
+![Inside a bounded context](/docs/images/inside-a-bounded-context.png)
 
