@@ -45,7 +45,7 @@ namespace MyApp.Domain
 
 ## Implement IEntityKey < TId >
 
-If we are in a situation where inheritance is not possible or not suitable, there another option: directly implement the interface **IEntityKey < TId >**. In this case we have the freedom to choose the type of Id as well. 
+If we are in a situation where inheritance is not possible or not suitable, there is another option: directly implement the interface **IEntityKey < TId >**. In this case we have the freedom to choose the type of Id as well. 
 
 ```csharp
 using DynamoCode.Domain.Entities;
