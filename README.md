@@ -10,8 +10,9 @@ We also provide an opinionated yet flexible way to structure an application foll
 
 * [Quick overview of Domain Driven Design](docs/domain-driven-design.md)
 * [Our vision of Layered Architecture](docs/layered-architecture.md)
+* [Our Samples repository](https://github.com/DynamoCode/DynamoCode.Samples)
 
-# Application structure
+## Application structure
 
 There countless ways to structure an application, but we see four big groups of components:
 
@@ -22,3 +23,20 @@ There countless ways to structure an application, but we see four big groups of 
 
 Each of those can be sub divided depending on the specific project size and requirements.
 
+## Getting Started
+
+Create projects for Domain, Infrastructure and Application.
+
+Add references to the nuget packages for each layer.
+
+* DynamoCode.Domain
+* DynamoCode.Infrastructure
+* DynamoCode.Application (not available yet)
+
+[Using dotnet cli to get started](docs/dotnet-cli-create-projects.md)
+
+## Creating Entities
+
+Entities are one of the pillars of DDD, we provide base classes and interfaces to help in this area. See in more details how this is done. 
+
+[Tree ways to create entities](docs/create-entity.md)
