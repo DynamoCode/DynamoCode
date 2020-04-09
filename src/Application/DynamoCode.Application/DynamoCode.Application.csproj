@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
-    <Folder Include="Validations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\DynamoCode.Infrastructure.Data\DynamoCode.Infrastructure.Data.csproj" />
   </ItemGroup>
 
