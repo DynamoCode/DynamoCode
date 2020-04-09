@@ -47,7 +47,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: 'src/Application/DynamoCode.Application/DynamoCode.Application.csproj'
+    packagesToPack: 'nuget/DynamoCode.Application/DynamoCode.Application.csproj'
     versioningScheme: 'off'
     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
