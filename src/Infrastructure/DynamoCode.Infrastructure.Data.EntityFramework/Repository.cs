@@ -25,9 +25,9 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
             return _dbSet.Find(id);
         }
 
-        public virtual void Add(T entity)
+        public virtual void Add(T item)
         {
-            _dbSet.Add(entity);            
+            _dbSet.Add(item);
         }
 
         public virtual void Add(IEnumerable<T> items)
@@ -35,28 +35,28 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
             _dbSet.AddRange(items);
         }
 
-        public virtual void Update(T entity)
+        public virtual void Update(T item)
         {
-            _unitOfWork.Context.Update(entity);
+            _unitOfWork.Context.Update(item);
         }
 
-        public void Delete(T entity)
+        public void Delete(T item)
         {
-            _dbSet.Remove(entity);
+            _dbSet.Remove(item);
         }
 
         public virtual void Delete(TKey id)
         {
-            T entity = FindBy(id);
-            if (entity != null)
+            T item = FindBy(id);
+            if (item != null)
             {
-                _dbSet.Remove(entity);
+                _dbSet.Remove(item);
             }
         }
 
-        public void Delete(IEnumerable<T> entities)
+        public void Delete(IEnumerable<T> items)
         {
-            _dbSet.RemoveRange(entities);
+            _dbSet.RemoveRange(items);
         }
 
         public virtual IList<T> All()

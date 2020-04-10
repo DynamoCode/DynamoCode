@@ -4,31 +4,31 @@ namespace DynamoCode.Infrastructure.Data
 {
     public interface IRepository<TKey, TEntity> : IReadOnlyRepository<TKey, TEntity> where TEntity : class
     {
-        void Add(TEntity entity);
+        void Add(TEntity item);
 
         void Add(IEnumerable<TEntity> items);
 
-        void Update(TEntity entity);
+        void Update(TEntity item);
 
-        void Delete(TEntity entity);
+        void Delete(TEntity item);
 
         void Delete(TKey id);
 
-        void Delete(IEnumerable<TEntity> entities);
+        void Delete(IEnumerable<TEntity> items);
     }
 
     public interface IRepository<TEntity> : IReadOnlyRepository<TEntity> where TEntity : class
     {
-        void Add(TEntity entity);
+        void Add(TEntity item);
 
         void Add(IEnumerable<TEntity> items);
 
-        void Update(TEntity entity);
+        void Update(TEntity item);
 
-        void Delete(TEntity entity);
+        void Delete(TEntity item);
 
         void Delete(int id);
 
-        void Delete(IEnumerable<TEntity> entities);
+        void Delete(IEnumerable<TEntity> items);
     }
 }
