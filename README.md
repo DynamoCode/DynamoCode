@@ -37,6 +37,12 @@ Add references to the nuget packages for each layer.
 
 ## Creating Entities
 
-Entities are one of the pillars of DDD, we provide base classes and interfaces to help in this area. See in more details how this is done. 
+Entities are one of the pillars of DDD, they are domain concepts that have a unique identity in the problem domain. We provide base classes and interfaces to help in this area.
 
 [Tree ways to create entities](docs/create-entity.md)
+
+## Creating Repositories
+
+Repositories are a fundamental part of the infrastructural concerns as they mediate between the domain model and the data model. We provide base classes and interfaces to help in this area. 
+
+[Creating repositories](docs/create-repository.md)
