@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DynamoCode.Infrastructure.Logging\DynamoCode.Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\..\Domain\DynamoCode.Domain\DynamoCode.Domain.csproj" />
   </ItemGroup>
 
 </Project>
