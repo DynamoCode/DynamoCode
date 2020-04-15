@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\DynamoCode.Domain\DynamoCode.Domain.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\DynamoCode.Infrastructure.Data\DynamoCode.Infrastructure.Data.csproj" />
-  </ItemGroup>
 
 </Project>

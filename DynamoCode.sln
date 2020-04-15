@@ -7,29 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamoCode.Domain", "src\Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Application", "src\Application\DynamoCode.Application\DynamoCode.Application.csproj", "{989776E2-9563-4323-859A-CEC676834948}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Data", "src\Infrastructure\DynamoCode.Infrastructure.Data\DynamoCode.Infrastructure.Data.csproj", "{C432E0EF-1DED-4A97-93D3-ECDA4B9A3EE4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E2B774A4-04C9-4486-A46F-A3D02362E3C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{112AA09F-7882-4F8E-8C50-DBE523E857AC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{7ADC8546-6647-4910-83BC-41503970B34A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Caching.MemoryCache", "src\Infrastructure\DynamoCode.Infrastructure.Caching.MemoryCache\DynamoCode.Infrastructure.Caching.MemoryCache.csproj", "{7D17AE18-DDCA-4DB7-9CF3-32B004578244}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Data.EntityFramework", "src\Infrastructure\DynamoCode.Infrastructure.Data.EntityFramework\DynamoCode.Infrastructure.Data.EntityFramework.csproj", "{EBBC43FB-E8CD-4B41-8460-4D0FB7FB4454}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A7851810-7D73-11EA-B6DD-6135C0D18347}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Logging", "src\Infrastructure\DynamoCode.Infrastructure.Logging\DynamoCode.Infrastructure.Logging.csproj", "{18FEA47F-CA42-49DF-9127-B73DDD67D37E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Data.EntityFramework", "src\Infrastructure\DynamoCode.Infrastructure.Data.EntityFramework\DynamoCode.Infrastructure.Data.EntityFramework.csproj", "{B51647CA-BEF9-48E2-ACF9-E4A030933640}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Caching", "src\Infrastructure\DynamoCode.Infrastructure.Caching\DynamoCode.Infrastructure.Caching.csproj", "{03D0935B-E62E-4958-8146-06634FC6D6E9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Caching.MemoryCache", "src\Infrastructure\DynamoCode.Infrastructure.Caching.MemoryCache\DynamoCode.Infrastructure.Caching.MemoryCache.csproj", "{04628EF4-0AA0-4820-AE6D-95729055FE1C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Logging.Microsoft", "src\Infrastructure\DynamoCode.Infrastructure.Logging.Microsoft\DynamoCode.Infrastructure.Logging.Microsoft.csproj", "{02615656-C4CE-4F5E-ACFE-FAC31EBB013E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BAA22AFD-1495-4C99-8B02-187949B1E7E3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{DCC1F9DA-467D-43FC-97BD-126F9AF9EC2B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ecommerce", "Ecommerce", "{B3EDE56E-FAE7-40D5-9D79-C7BE1BD89446}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Logging.Microsoft", "src\Infrastructure\DynamoCode.Infrastructure.Logging.Microsoft\DynamoCode.Infrastructure.Logging.Microsoft.csproj", "{CBE7955F-E475-4C22-9959-BB4CB80040FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,30 +33,18 @@ Global
 		{989776E2-9563-4323-859A-CEC676834948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{989776E2-9563-4323-859A-CEC676834948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{989776E2-9563-4323-859A-CEC676834948}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C432E0EF-1DED-4A97-93D3-ECDA4B9A3EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C432E0EF-1DED-4A97-93D3-ECDA4B9A3EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C432E0EF-1DED-4A97-93D3-ECDA4B9A3EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C432E0EF-1DED-4A97-93D3-ECDA4B9A3EE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBBC43FB-E8CD-4B41-8460-4D0FB7FB4454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBBC43FB-E8CD-4B41-8460-4D0FB7FB4454}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBBC43FB-E8CD-4B41-8460-4D0FB7FB4454}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBBC43FB-E8CD-4B41-8460-4D0FB7FB4454}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18FEA47F-CA42-49DF-9127-B73DDD67D37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18FEA47F-CA42-49DF-9127-B73DDD67D37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18FEA47F-CA42-49DF-9127-B73DDD67D37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18FEA47F-CA42-49DF-9127-B73DDD67D37E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{03D0935B-E62E-4958-8146-06634FC6D6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03D0935B-E62E-4958-8146-06634FC6D6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03D0935B-E62E-4958-8146-06634FC6D6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03D0935B-E62E-4958-8146-06634FC6D6E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04628EF4-0AA0-4820-AE6D-95729055FE1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04628EF4-0AA0-4820-AE6D-95729055FE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04628EF4-0AA0-4820-AE6D-95729055FE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04628EF4-0AA0-4820-AE6D-95729055FE1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02615656-C4CE-4F5E-ACFE-FAC31EBB013E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02615656-C4CE-4F5E-ACFE-FAC31EBB013E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02615656-C4CE-4F5E-ACFE-FAC31EBB013E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02615656-C4CE-4F5E-ACFE-FAC31EBB013E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,13 +52,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7E5CD199-57E8-41D6-B973-B89D93C58F71} = {E2B774A4-04C9-4486-A46F-A3D02362E3C8}
 		{989776E2-9563-4323-859A-CEC676834948} = {112AA09F-7882-4F8E-8C50-DBE523E857AC}
-		{C432E0EF-1DED-4A97-93D3-ECDA4B9A3EE4} = {7ADC8546-6647-4910-83BC-41503970B34A}
-		{EBBC43FB-E8CD-4B41-8460-4D0FB7FB4454} = {7ADC8546-6647-4910-83BC-41503970B34A}
-		{18FEA47F-CA42-49DF-9127-B73DDD67D37E} = {7ADC8546-6647-4910-83BC-41503970B34A}
-		{03D0935B-E62E-4958-8146-06634FC6D6E9} = {7ADC8546-6647-4910-83BC-41503970B34A}
-		{04628EF4-0AA0-4820-AE6D-95729055FE1C} = {7ADC8546-6647-4910-83BC-41503970B34A}
-		{02615656-C4CE-4F5E-ACFE-FAC31EBB013E} = {7ADC8546-6647-4910-83BC-41503970B34A}
-		{B3EDE56E-FAE7-40D5-9D79-C7BE1BD89446} = {DCC1F9DA-467D-43FC-97BD-126F9AF9EC2B}
+		{7D17AE18-DDCA-4DB7-9CF3-32B004578244} = {A7851810-7D73-11EA-B6DD-6135C0D18347}
+		{B51647CA-BEF9-48E2-ACF9-E4A030933640} = {A7851810-7D73-11EA-B6DD-6135C0D18347}
+		{CBE7955F-E475-4C22-9959-BB4CB80040FD} = {A7851810-7D73-11EA-B6DD-6135C0D18347}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FD4039F-C947-4DB7-B5CA-F29B63BDE384}
