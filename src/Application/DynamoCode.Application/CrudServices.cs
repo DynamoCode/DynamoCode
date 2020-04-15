@@ -1,29 +1,34 @@
-﻿using DynamoCode.Infrastructure.Data;
+﻿using DynamoCode.Application.Mappers;
+using DynamoCode.Infrastructure.Data;
 using System.Threading.Tasks;
 
 namespace DynamoCode.Application
 {
-    public class CrudServices<T> : ReadOnlyServices<T> where T : class
+    public class CrudServices<Entity,EntityDto> : ReadOnlyServices<Entity, EntityDto> where Entity : class
     {
         private IUnitOfWork _unitOfWork;
 
-        private IRepository<T> _repository;
+        private IRepository<Entity> _repository;
 
-        public CrudServices(IRepository<T> repository, IUnitOfWork unitOfWork)
-            : base(repository)
+        public CrudServices(IRepository<Entity> repository,
+                            IMapper<Entity,EntityDto> mapper,
+                            IUnitOfWork unitOfWork)
+            : base(repository,mapper)
         {
             _unitOfWork = unitOfWork;
             _repository = repository;
         }
 
-        public void Add(T entity)
+        public void Add(EntityDto entityDto)
         {
+            var entity = _mapper.MapToEntity(entityDto);
             _repository.Add(entity);
             _unitOfWork.Commit();
         }
 
-        public void Update(T entity)
+        public void Update(EntityDto entityDto)
         {
+            var entity = _mapper.MapToEntity(entityDto);
             _repository.Update(entity);
             _unitOfWork.Commit();
         }
@@ -34,22 +39,24 @@ namespace DynamoCode.Application
             _unitOfWork.Commit();
         }
 
-        public Task<int> AddAsync(T entity)
+        public async Task AddAsync(EntityDto entityDto)
         {
+            var entity = _mapper.MapToEntity(entityDto);
             _repository.Add(entity);
-            return _unitOfWork.CommitAsync();
+             await _unitOfWork.CommitAsync();
         }
 
-        public Task<int> UpdateAsync(T entity)
+        public async Task UpdateAsync(EntityDto entityDto)
         {
+            var entity = _mapper.MapToEntity(entityDto);
             _repository.Update(entity);
-            return _unitOfWork.CommitAsync();
+             await _unitOfWork.CommitAsync();
         }
 
-        public Task<int> DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             _repository.Delete(id);
-            return _unitOfWork.CommitAsync();
+             await _unitOfWork.CommitAsync();
         }
     }
 }

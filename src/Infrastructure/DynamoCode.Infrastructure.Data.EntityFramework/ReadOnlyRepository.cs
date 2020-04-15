@@ -1,7 +1,4 @@
-﻿using DynamoCode.Infrastructure.Data.Entities;
-using DynamoCode.Infrastructure.Data.EntityFramework.Specifications;
-using DynamoCode.Infrastructure.Data.Specifications;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,28 +22,22 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
             return _dbSet.Find(id);
         }
 
-        public virtual void Add(T entity)
-        {
-            _dbSet.Add(entity);            
-        }
-
-        public virtual IList<T> All()
+        public IList<T> All()
         {
             return _dbSet.ToList();
         }
 
-        public virtual PagedResult<T> All(int page, int itemsPerPage)
-        {
-            PagedResult<T> result = new PagedResult<T>
-            {
-                PageOfItems = _dbSet.ToPage(page, itemsPerPage).ToList(),
-                TotalItems = _dbSet.Count()
-            };
-
-            return result;
+        public List<T> All(int page, int itemsPerPage)
+        { 
+            return _dbSet.ToPage(page, itemsPerPage).ToList();
         }
 
-        public Task<T> FindByAsync(TKey id)
+        public int Count()
+        {
+            return _dbSet.Count();
+        }
+
+        public ValueTask<T> FindByAsync(TKey id)
         {
             return _dbSet.FindAsync(id);
         }
@@ -56,20 +47,14 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
             return _dbSet.ToListAsync();
         }
 
-        public async Task<PagedResult<T>> AllAsync(int page, int itemsPerPage)
+        public Task<List<T>> AllAsync(int page, int itemsPerPage)
         {
-            PagedResult<T> result = new PagedResult<T>
-            {
-                PageOfItems = await _dbSet.ToPage(page, itemsPerPage).ToListAsync(),
-                TotalItems = await _dbSet.CountAsync()
-            };
-
-            return result;
+            return _dbSet.ToPage(page, itemsPerPage).ToListAsync();
         }
 
-        protected IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        public Task<int> CountAsync()
         {
-            return SpecificationEvaluator<T>.GetQuery(_dbSet.AsQueryable(), spec);
+            return _dbSet.CountAsync();
         }
     }
 

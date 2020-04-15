@@ -13,7 +13,7 @@ namespace DynamoCode.Domain.Entities
     {
         protected int? _requestedHashCode;
 
-        public bool IsTransient()
+        public virtual bool IsTransient()
         {
             return this.Id == default(Int32);
         }

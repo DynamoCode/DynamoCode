@@ -1,47 +1,68 @@
-﻿using DynamoCode.Infrastructure.Data;
-using DynamoCode.Infrastructure.Data.Entities;
+﻿using DynamoCode.Application.Entities;
+using DynamoCode.Application.Mappers;
+using DynamoCode.Infrastructure.Data;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DynamoCode.Application
 {
-    public class ReadOnlyServices<T> where T : class
+    public class ReadOnlyServices<Entity,EntityDto> where Entity : class
     {
-        protected IReadOnlyRepository<T> _readOnlyRepository;
+        protected IReadOnlyRepository<Entity> _readOnlyRepository;
 
-        public ReadOnlyServices(IReadOnlyRepository<T> repository)
+        protected IMapper<Entity,EntityDto> _mapper;
+
+        public ReadOnlyServices(IReadOnlyRepository<Entity> repository,
+                                IMapper<Entity,EntityDto> mapper)
         {
             _readOnlyRepository = repository;
+            _mapper = mapper;
         }
 
-        public T FindBy(int id)
+        public EntityDto FindBy(int id)
         {
-            return _readOnlyRepository.FindBy(id);
+            var entity = _readOnlyRepository.FindBy(id);
+            return _mapper.MapToDto(entity);
         }
 
-        public IList<T> All()
+        public IList<EntityDto> All()
         {
-            return _readOnlyRepository.All();
+            return _readOnlyRepository.All().Select(e => _mapper.MapToDto(e)).ToList();
+        }        
+
+        public PagedResult<EntityDto> All(int page, int itemsPerPage)
+        {
+            var items = _readOnlyRepository.All(page, itemsPerPage).Select(e => _mapper.MapToDto(e));
+            int count = _readOnlyRepository.Count();
+
+            return new PagedResult<EntityDto>{
+                PageOfItems = items.ToList(),
+                TotalItems = count
+            };
         }
 
-        public PagedResult<T> All(int page, int itemsPerPage)
+        public async Task<EntityDto> FindByAsync(int id)
         {
-            return _readOnlyRepository.All(page, itemsPerPage);
+            var entity = await  _readOnlyRepository.FindByAsync(id);
+            return  _mapper.MapToDto(entity);
         }
 
-        public Task<T> FindByAsync(int id)
+        public async Task<List<EntityDto>> AllAsync()
         {
-            return _readOnlyRepository.FindByAsync(id);
+            var items = await _readOnlyRepository.AllAsync();
+            return items.Select(e => _mapper.MapToDto(e)).ToList();
         }
 
-        public Task<List<T>> AllAsync()
+        public async Task<PagedResult<EntityDto>> AllAsync(int page, int itemsPerPage)
         {
-            return _readOnlyRepository.AllAsync();
-        }
+           var items = await _readOnlyRepository.AllAsync(page, itemsPerPage);
+            int count = await _readOnlyRepository.CountAsync();
 
-        public Task<PagedResult<T>> AllAsync(int page, int itemsPerPage)
-        {
-            return _readOnlyRepository.AllAsync(page, itemsPerPage);
+            return new PagedResult<EntityDto>{
+                PageOfItems = items.Select(e => _mapper.MapToDto(e)).ToList(),
+                TotalItems = count
+            };
         }
     }
 }

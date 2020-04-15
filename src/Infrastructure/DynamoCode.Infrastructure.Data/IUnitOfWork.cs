@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
+using System;
 
 namespace DynamoCode.Infrastructure.Data
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         void Commit();
 
-        Task<int> CommitAsync();
+        Task CommitAsync();
     }
 }

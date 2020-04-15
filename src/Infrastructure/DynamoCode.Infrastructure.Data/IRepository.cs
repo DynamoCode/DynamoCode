@@ -17,18 +17,7 @@ namespace DynamoCode.Infrastructure.Data
         void Delete(IEnumerable<TEntity> entities);
     }
 
-    public interface IRepository<TEntity> : IReadOnlyRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> : IRepository<int, TEntity>, IReadOnlyRepository<TEntity> where TEntity : class
     {
-        void Add(TEntity entity);
-
-        void Add(IEnumerable<TEntity> items);
-
-        void Update(TEntity entity);
-
-        void Delete(TEntity entity);
-
-        void Delete(int id);
-
-        void Delete(IEnumerable<TEntity> entities);
     }
 }

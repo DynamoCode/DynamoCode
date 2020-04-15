@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace DynamoCode.Infrastructure.Data.Entities
+namespace DynamoCode.Application.Entities
 {
     public class PagedResult<T>
     {

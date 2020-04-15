@@ -1,5 +1,4 @@
-﻿using DynamoCode.Infrastructure.Data.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DynamoCode.Infrastructure.Data
@@ -10,13 +9,17 @@ namespace DynamoCode.Infrastructure.Data
 
         IList<TEntity> All();
 
-        PagedResult<TEntity> All(int page, int itemsPerPage);
+        List<TEntity> All(int page, int itemsPerPage);
 
-        Task<TEntity> FindByAsync(TKey id);
+        int Count();
+
+        ValueTask<TEntity> FindByAsync(TKey id);
 
         Task<List<TEntity>> AllAsync();
 
-        Task<PagedResult<TEntity>> AllAsync(int page, int itemsPerPage);
+        Task<List<TEntity>> AllAsync(int page, int itemsPerPage);
+
+        Task<int> CountAsync();
     }
 
     public interface IReadOnlyRepository<TEntity> : IReadOnlyRepository<int, TEntity> where TEntity : class

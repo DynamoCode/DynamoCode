@@ -16,7 +16,7 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
             SaveChanges();
         }
 
-        public Task<int> CommitAsync()
+        public Task CommitAsync()
         {
             return SaveChangesAsync();
         }
