@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DynamoCode.Application.Entities
+namespace DynamoCode.Domain.Entities
 {
     public class PagedResult<T>
     {

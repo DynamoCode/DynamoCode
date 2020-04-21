@@ -27,7 +27,7 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
             return _dbSet.ToList();
         }
 
-        public List<T> All(int page, int itemsPerPage)
+        public IList<T> All(int page, int itemsPerPage)
         { 
             return _dbSet.ToPage(page, itemsPerPage).ToList();
         }
@@ -35,26 +35,6 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
         public int Count()
         {
             return _dbSet.Count();
-        }
-
-        public ValueTask<T> FindByAsync(TKey id)
-        {
-            return _dbSet.FindAsync(id);
-        }
-
-        public Task<List<T>> AllAsync()
-        {
-            return _dbSet.ToListAsync();
-        }
-
-        public Task<List<T>> AllAsync(int page, int itemsPerPage)
-        {
-            return _dbSet.ToPage(page, itemsPerPage).ToListAsync();
-        }
-
-        public Task<int> CountAsync()
-        {
-            return _dbSet.CountAsync();
         }
     }
 

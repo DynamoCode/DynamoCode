@@ -11,9 +11,17 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
         protected ISession _session;
         protected ITransaction _transaction;
 
+        protected bool _autoCommit = false;
+
         public UnitOfWork(ISessionFactory sessionFactory)
         {
             _sessionFactory = sessionFactory;            
+        }
+
+        public UnitOfWork(ISessionFactory sessionFactory, bool autoCommit)
+        {
+            _sessionFactory = sessionFactory;   
+            _autoCommit =  autoCommit;       
         }
 
         public virtual ISession Session
@@ -39,18 +47,21 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
 
         public virtual void Commit()
         {
-            if (_transaction != null && _transaction.IsActive)
+            try
             {
-                try
+                if (_transaction != null && _transaction.IsActive)
                 {
                     _transaction.Commit();
                 }
-                catch (Exception e)
-                {
-                    _transaction.Rollback();
-                    throw e;
-                }
-                finally
+            }
+            catch (Exception e)
+            {
+                _transaction.Rollback();
+                throw e;
+            }
+            finally
+            {
+                if (_transaction != null)
                 {
                     _transaction.Dispose();
                     _transaction = null;
@@ -66,6 +77,11 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
                 _transaction.Dispose();
                 _transaction = null;
             }
+            if (_transaction != null)
+            {
+                _transaction.Dispose();
+                _transaction = null;
+            }
         }
 
         public virtual void Dispose()
@@ -74,7 +90,13 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
             {
                 try
                 {
-                    Commit();
+                    if (_autoCommit)
+                    {
+                        Commit();
+                    }else
+                    {
+                        Rollback();
+                    }
                 }
                 catch (Exception e)
                 {

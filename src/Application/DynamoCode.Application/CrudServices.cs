@@ -1,17 +1,21 @@
-﻿using DynamoCode.Application.Mappers;
+﻿using DynamoCode.Domain.Dto;
+using DynamoCode.Domain.Entities;
+using DynamoCode.Domain.Mappers;
 using DynamoCode.Infrastructure.Data;
 using System.Threading.Tasks;
 
 namespace DynamoCode.Application
 {
-    public class CrudServices<Entity,EntityDto> : ReadOnlyServices<Entity, EntityDto> where Entity : class
+    public class CrudServices<T,Dto> : ReadOnlyServices<T, Dto> 
+    where T : Entity 
+    where Dto : EntityDto
     {
         private IUnitOfWork _unitOfWork;
 
-        private IRepository<Entity> _repository;
+        private IRepository<T> _repository;
 
-        public CrudServices(IRepository<Entity> repository,
-                            IMapper<Entity,EntityDto> mapper,
+        public CrudServices(IRepository<T> repository,
+                            IMapper<T,Dto> mapper,
                             IUnitOfWork unitOfWork)
             : base(repository,mapper)
         {
@@ -21,7 +25,7 @@ namespace DynamoCode.Application
 
         public void Add(EntityDto entityDto)
         {
-            var entity = _mapper.MapToEntity(entityDto);
+            var entity = _mapper.MapFromDtoToEntity(entityDto);
             _repository.Add(entity);
             _unitOfWork.Commit();
         }

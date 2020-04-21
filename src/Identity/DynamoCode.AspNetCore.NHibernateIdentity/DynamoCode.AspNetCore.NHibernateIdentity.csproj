@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="NHibernate" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DynamoCode.AspNetCore.Identity\DynamoCode.AspNetCore.Identity.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\DynamoCode.Infrastructure.Data.NHibernate\DynamoCode.Infrastructure.Data.NHibernate.csproj" />
+    <ProjectReference Include="..\..\Domain\DynamoCode.Domain\DynamoCode.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

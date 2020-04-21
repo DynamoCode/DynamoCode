@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ContosoUniversity.Infrastructure.Data.Queries
+namespace DynamoCode.Infrastructure.Data.Queries
 {
     public interface IQueryHandler<TReturn>
     {

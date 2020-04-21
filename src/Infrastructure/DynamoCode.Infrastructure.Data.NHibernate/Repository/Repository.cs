@@ -8,7 +8,6 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
         :base(unitOfWork)
         {
         }
-
         public virtual void Add(T entity)
         {
             _unitOfWork.Session.Save(entity);
@@ -21,7 +20,6 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
                 _unitOfWork.Session.Save(item);
             }
         }
-
         public virtual void Update(T entity)
         {
             _unitOfWork.Session.Update(entity);

@@ -1,5 +1,5 @@
-﻿using DynamoCode.Application.Entities;
-using DynamoCode.Application.Mappers;
+﻿using DynamoCode.Domain.Entities;
+using DynamoCode.Domain.Mappers;
 using DynamoCode.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Linq;

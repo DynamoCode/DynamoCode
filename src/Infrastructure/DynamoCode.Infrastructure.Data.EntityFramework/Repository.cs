@@ -21,7 +21,7 @@ namespace DynamoCode.Infrastructure.Data.EntityFramework
 
         public void Update(T entity)
         {
-            _unitOfWork.Context.Update(entity);
+            _dbSet.Update(entity);
         }
 
         public void Delete(T item)

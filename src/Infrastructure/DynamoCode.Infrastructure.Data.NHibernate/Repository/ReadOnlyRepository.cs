@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
+using NHibernate.Linq;
 
 namespace DynamoCode.Infrastructure.Data.NHibernate
 {
@@ -25,34 +25,14 @@ namespace DynamoCode.Infrastructure.Data.NHibernate
             return _unitOfWork.Session.Query<T>().ToList();
         }
 
-        ValueTask<T> IReadOnlyRepository<TKey, T>.FindByAsync(TKey id)
+        public IList<T> All(int page, int itemsPerPage)
         {
-            return new ValueTask<T>(task: _unitOfWork.Session.GetAsync<T>(id));
-        }
-
-        public Task<List<T>> AllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<T> All(int page, int itemsPerPage)
-        {
-            throw new NotImplementedException();
+            return _unitOfWork.Session.Query<T>().ToPage(page, itemsPerPage).ToList();
         }
 
         public int Count()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<T>> AllAsync(int page, int itemsPerPage)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> CountAsync()
-        {
-            throw new NotImplementedException();
+            return _unitOfWork.Session.Query<T>().Count();
         }
     }
 
