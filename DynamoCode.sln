@@ -11,13 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E2B774
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{112AA09F-7882-4F8E-8C50-DBE523E857AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Caching.MemoryCache", "src\Infrastructure\DynamoCode.Infrastructure.Caching.MemoryCache\DynamoCode.Infrastructure.Caching.MemoryCache.csproj", "{7D17AE18-DDCA-4DB7-9CF3-32B004578244}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F47CEC2-F849-4DD3-AD3F-706E96461B3B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A7851810-7D73-11EA-B6DD-6135C0D18347}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8055FB3F-C00D-432E-8C9C-72FCA064F0AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Data.EntityFramework", "src\Infrastructure\DynamoCode.Infrastructure.Data.EntityFramework\DynamoCode.Infrastructure.Data.EntityFramework.csproj", "{B51647CA-BEF9-48E2-ACF9-E4A030933640}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Data.NHibernate", "src\Infrastructure\DynamoCode.Infrastructure.Data.NHibernate\DynamoCode.Infrastructure.Data.NHibernate.csproj", "{C7B61625-0A0E-4F15-A3C6-9DDCC277A356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Logging.Microsoft", "src\Infrastructure\DynamoCode.Infrastructure.Logging.Microsoft\DynamoCode.Infrastructure.Logging.Microsoft.csproj", "{CBE7955F-E475-4C22-9959-BB4CB80040FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Data.EntityFramework", "src\Infrastructure\DynamoCode.Infrastructure.Data.EntityFramework\DynamoCode.Infrastructure.Data.EntityFramework.csproj", "{1E5C738A-5707-436D-9786-AD9D591924CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Caching.MemoryCache", "src\Infrastructure\DynamoCode.Infrastructure.Caching.MemoryCache\DynamoCode.Infrastructure.Caching.MemoryCache.csproj", "{5567F85A-6E2F-4C29-9E11-239873DA150F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +35,18 @@ Global
 		{989776E2-9563-4323-859A-CEC676834948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{989776E2-9563-4323-859A-CEC676834948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{989776E2-9563-4323-859A-CEC676834948}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D17AE18-DDCA-4DB7-9CF3-32B004578244}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B51647CA-BEF9-48E2-ACF9-E4A030933640}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBE7955F-E475-4C22-9959-BB4CB80040FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B61625-0A0E-4F15-A3C6-9DDCC277A356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B61625-0A0E-4F15-A3C6-9DDCC277A356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B61625-0A0E-4F15-A3C6-9DDCC277A356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B61625-0A0E-4F15-A3C6-9DDCC277A356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E5C738A-5707-436D-9786-AD9D591924CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E5C738A-5707-436D-9786-AD9D591924CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E5C738A-5707-436D-9786-AD9D591924CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E5C738A-5707-436D-9786-AD9D591924CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,9 +54,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7E5CD199-57E8-41D6-B973-B89D93C58F71} = {E2B774A4-04C9-4486-A46F-A3D02362E3C8}
 		{989776E2-9563-4323-859A-CEC676834948} = {112AA09F-7882-4F8E-8C50-DBE523E857AC}
-		{7D17AE18-DDCA-4DB7-9CF3-32B004578244} = {A7851810-7D73-11EA-B6DD-6135C0D18347}
-		{B51647CA-BEF9-48E2-ACF9-E4A030933640} = {A7851810-7D73-11EA-B6DD-6135C0D18347}
-		{CBE7955F-E475-4C22-9959-BB4CB80040FD} = {A7851810-7D73-11EA-B6DD-6135C0D18347}
+		{8055FB3F-C00D-432E-8C9C-72FCA064F0AB} = {4F47CEC2-F849-4DD3-AD3F-706E96461B3B}
+		{C7B61625-0A0E-4F15-A3C6-9DDCC277A356} = {8055FB3F-C00D-432E-8C9C-72FCA064F0AB}
+		{1E5C738A-5707-436D-9786-AD9D591924CE} = {8055FB3F-C00D-432E-8C9C-72FCA064F0AB}
+		{5567F85A-6E2F-4C29-9E11-239873DA150F} = {8055FB3F-C00D-432E-8C9C-72FCA064F0AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FD4039F-C947-4DB7-B5CA-F29B63BDE384}
