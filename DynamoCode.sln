@@ -21,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.Infrastructure.Caching.MemoryCache", "src\Infrastructure\DynamoCode.Infrastructure.Caching.MemoryCache\DynamoCode.Infrastructure.Caching.MemoryCache.csproj", "{5567F85A-6E2F-4C29-9E11-239873DA150F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{3352B1B4-A73C-47F9-977B-8316C10B37C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.AspNetCore.Identity", "src\Identity\DynamoCode.AspNetCore.Identity\DynamoCode.AspNetCore.Identity.csproj", "{E0EF83CC-C59D-4466-A4A7-E08250A92DC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoCode.AspNetCore.NHibernateIdentity", "src\Identity\DynamoCode.AspNetCore.NHibernateIdentity\DynamoCode.AspNetCore.NHibernateIdentity.csproj", "{C60A3159-69F6-4AA4-A5B3-3773FD575369}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +53,14 @@ Global
 		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5567F85A-6E2F-4C29-9E11-239873DA150F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0EF83CC-C59D-4466-A4A7-E08250A92DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0EF83CC-C59D-4466-A4A7-E08250A92DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0EF83CC-C59D-4466-A4A7-E08250A92DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0EF83CC-C59D-4466-A4A7-E08250A92DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60A3159-69F6-4AA4-A5B3-3773FD575369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60A3159-69F6-4AA4-A5B3-3773FD575369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60A3159-69F6-4AA4-A5B3-3773FD575369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60A3159-69F6-4AA4-A5B3-3773FD575369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +72,9 @@ Global
 		{C7B61625-0A0E-4F15-A3C6-9DDCC277A356} = {8055FB3F-C00D-432E-8C9C-72FCA064F0AB}
 		{1E5C738A-5707-436D-9786-AD9D591924CE} = {8055FB3F-C00D-432E-8C9C-72FCA064F0AB}
 		{5567F85A-6E2F-4C29-9E11-239873DA150F} = {8055FB3F-C00D-432E-8C9C-72FCA064F0AB}
+		{3352B1B4-A73C-47F9-977B-8316C10B37C1} = {4F47CEC2-F849-4DD3-AD3F-706E96461B3B}
+		{E0EF83CC-C59D-4466-A4A7-E08250A92DC2} = {3352B1B4-A73C-47F9-977B-8316C10B37C1}
+		{C60A3159-69F6-4AA4-A5B3-3773FD575369} = {3352B1B4-A73C-47F9-977B-8316C10B37C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FD4039F-C947-4DB7-B5CA-F29B63BDE384}
