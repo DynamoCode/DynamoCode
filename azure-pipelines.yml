@@ -54,8 +54,8 @@ steps:
 #     versioningScheme: 'off'
 #     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     ArtifactName: 'DynamoCodePackages'
-#     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'DynamoCodePackages'
+    publishLocation: 'Container'
