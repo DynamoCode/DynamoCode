@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\DynamoCode.Domain\DynamoCode.Domain.csproj" />
+    <ProjectReference Include="..\DynamoCode.Domain\DynamoCode.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
