@@ -3,10 +3,11 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: $(majorMinorVersion)-alpha.$(revision)
+# name: $(majorMinorVersion)-alpha.$(revision)
+name: $(majorMinorVersion).$(revision)
 
 variables:
-  majorMinorVersion: 0.0.0
+  majorMinorVersion: '0.0'
   revision: $[counter(variables['majorMinorVersion'], 0)]
   BuildConfiguration: 'Release'
 
@@ -27,6 +28,14 @@ steps:
     command: 'test'
     projects: '**/*Tests/*.csproj'
 
+# Domain package
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'src/**/*.csproj;!src/Identity/**/*.csproj'
+    versioningScheme: 'off'
+    buildProperties: 'PackageVersion=$(Build.BuildNumber)'
+
 # # Infrastructure package 
 # - task: DotNetCoreCLI@2
 #   inputs:
@@ -35,13 +44,7 @@ steps:
 #     versioningScheme: 'off'
 #     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
-# # Domain package
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'pack'
-#     packagesToPack: 'src/Domain/DynamoCode.Domain/DynamoCode.Domain.csproj'
-#     versioningScheme: 'off'
-#     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
+
 
 # # Application package
 # - task: DotNetCoreCLI@2
