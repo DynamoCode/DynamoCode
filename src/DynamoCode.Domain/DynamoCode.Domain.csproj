@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>Domain Driven Design base architecture .NET Core implementation. This is the base for Domain implementaion.</Description>
+    <PackageTags>ddd; domain driven design; entity; value object; base domain;</PackageTags>
   </PropertyGroup>
+
+  <Import Project="..\..\Common.targets"/>
 
 </Project>

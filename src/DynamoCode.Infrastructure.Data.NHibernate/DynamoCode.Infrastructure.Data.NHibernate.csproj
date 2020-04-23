@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <Description>DynamoCode implementation of Data Access using NHibernate</Description>
+    <PackageTags>ddd; domain driven design; repository; data access; nhibernate</PackageTags>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="NHibernate" Version="5.2.7" />
   </ItemGroup>
@@ -8,8 +13,6 @@
     <ProjectReference Include="..\DynamoCode.Domain\DynamoCode.Domain.csproj" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-  </PropertyGroup>
+  <Import Project="..\..\Common.targets"/>
 
 </Project>

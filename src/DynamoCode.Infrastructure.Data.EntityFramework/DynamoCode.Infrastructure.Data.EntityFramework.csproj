@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>DynamoCode implementation of Data Access using EntityFrameworkCore</Description>
+    <PackageTags>ddd; domain driven design; repository; data access; entityframework</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,5 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DynamoCode.Domain\DynamoCode.Domain.csproj" />
   </ItemGroup>
+
+  <Import Project="..\..\Common.targets"/>
 
 </Project>
