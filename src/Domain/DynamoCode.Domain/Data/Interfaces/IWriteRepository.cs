@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace DynamoCode.Infrastructure.Data
+namespace DynamoCode.Domain.Data.Interfaces
 {
-    public interface IRepository<TKey, TEntity> : IReadOnlyRepository<TKey, TEntity> where TEntity : class
+    public interface IWriteRepository<TKey, TEntity> where TEntity : class
     {
         void Add(TEntity item);
 
@@ -17,7 +17,8 @@ namespace DynamoCode.Infrastructure.Data
         void Delete(IEnumerable<TEntity> items);
     }
 
-    public interface IRepository<TEntity> : IRepository<int, TEntity>, IReadOnlyRepository<TEntity> where TEntity : class
+    public interface IWriteRepository<TEntity> : IWriteRepository<int, TEntity> where TEntity : class
     {
+
     }
 }

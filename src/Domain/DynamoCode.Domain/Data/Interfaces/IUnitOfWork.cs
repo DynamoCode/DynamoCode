@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System;
 
-namespace DynamoCode.Infrastructure.Data
+namespace DynamoCode.Infrastructure.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

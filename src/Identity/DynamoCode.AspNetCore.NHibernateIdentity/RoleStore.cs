@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DynamoCode.AspNetCore.NHibernateIdentity
 {
-    public class RoleStore<TRole> : IQueryableRoleStore<TRole>, IRoleClaimStore<TRole> where TRole : DynamoCode.Core.Domain.Identity.IdentityRole
+    public class RoleStore<TRole> : IQueryableRoleStore<TRole>, IRoleClaimStore<TRole> //where TRole : DynamoCode.Core.Domain.Identity.IdentityRole
     {
         private INHUnitOfWork _unitOfWork;
 
