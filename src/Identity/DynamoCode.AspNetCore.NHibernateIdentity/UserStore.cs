@@ -1,5 +1,6 @@
 ﻿using DynamoCode.Core.Domain.Identity;
 using DynamoCode.Infrastructure.Data.NHibernate;
+using DynamoCode.Infrastructure.Data.NHibernate.UoW;
 using Microsoft.AspNetCore.Identity;
 using NHibernate;
 using NHibernate.Linq;
