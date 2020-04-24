@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>DynamoCode implementation of Data Access using EntityFrameworkCore</Description>
+    <PackageTags>ddd; domain driven design; repository; data access; entityframework</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DynamoCode.Domain\DynamoCode.Domain.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\..\Common.targets"/>
+
+</Project>

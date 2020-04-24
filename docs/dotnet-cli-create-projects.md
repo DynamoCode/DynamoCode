@@ -18,18 +18,18 @@ Now add the nuget package references (version and source are required at this ea
 ```shell
 $ cd MyApp.Domain
 
-$ dotnet add package DynamoCode.Domain --version 0.0.0-alpha.12 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
+$ dotnet add package DynamoCode.Domain --version 0.0.1 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
 ```
+
+<!-- $ dotnet add package DynamoCode.Infrastructure --version 0.0.1 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json -->
 
 ```shell
 $ cd MyApp.Infrastructure
 
-$ dotnet add package DynamoCode.Infrastructure --version 0.0.0-alpha.12 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
-
-$ dotnet add package DynamoCode.Domain --version 0.0.0-alpha.12 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
+$ dotnet add package DynamoCode.Domain --version 0.0.1 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
 ```
 
-<!-- ```shell
+```shell
 $ cd MyApp.Application
-$ dotnet add package DynamoCode.Application --version 0.0.0-alpha.12 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
-``` -->
+$ dotnet add package DynamoCode.Application --version 0.0.1 --source https://pkgs.dev.azure.com/dynamocode/DynamoCode/_packaging/dev-test/nuget/v3/index.json
+```

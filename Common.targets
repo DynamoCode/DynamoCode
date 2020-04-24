@@ -1,0 +1,17 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Copyright>Copyright DynamoCode © 2020</Copyright>
+        <Authors>Abel Perez; Nestor Collazo</Authors>
+        <PackageTags>DDD; domain driven design; </PackageTags>
+        <PackageProjectUrl>https://github.com/DynamoCode/DynamoCode</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>git://github.com/DynamoCode/DynamoCode</RepositoryUrl>
+        <SignAssembly>true</SignAssembly>
+    </PropertyGroup>
+
+</Project>

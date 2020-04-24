@@ -3,10 +3,10 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: $(majorMinorVersion)-alpha.$(revision)
+name: $(majorMinorVersion).$(revision)
 
 variables:
-  majorMinorVersion: 0.0.0
+  majorMinorVersion: '0.0'
   revision: $[counter(variables['majorMinorVersion'], 0)]
   BuildConfiguration: 'Release'
 
@@ -27,32 +27,16 @@ steps:
     command: 'test'
     projects: '**/*Tests/*.csproj'
 
-# # Infrastructure package 
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'pack'
-#     packagesToPack: 'nuget/DynamoCode.Infrastructure/DynamoCode.Infrastructure.csproj'
-#     versioningScheme: 'off'
-#     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'src/**/*.csproj;!src/Identity/**/*.csproj'
+    versioningScheme: 'off'
+    nobuild: true
+    buildProperties: 'PackageVersion=$(Build.BuildNumber)'
 
-# # Domain package
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'pack'
-#     packagesToPack: 'src/Domain/DynamoCode.Domain/DynamoCode.Domain.csproj'
-#     versioningScheme: 'off'
-#     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
-
-# # Application package
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'pack'
-#     packagesToPack: 'nuget/DynamoCode.Core.Application/DynamoCode.Core.Application.csproj'
-#     versioningScheme: 'off'
-#     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     ArtifactName: 'DynamoCodePackages'
-#     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'DynamoCodePackages'
+    publishLocation: 'Container'

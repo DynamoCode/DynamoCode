@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DynamoCode.AspNetCore.Identity\DynamoCode.AspNetCore.Identity.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\DynamoCode.Infrastructure.Data.NHibernate\DynamoCode.Infrastructure.Data.NHibernate.csproj" />
-    <ProjectReference Include="..\..\Domain\DynamoCode.Domain\DynamoCode.Domain.csproj" />
+    <ProjectReference Include="..\..\DynamoCode.Domain\DynamoCode.Domain.csproj" />
+    <ProjectReference Include="..\..\DynamoCode.Infrastructure.Data.NHibernate\DynamoCode.Infrastructure.Data.NHibernate.csproj" />
   </ItemGroup>
 
 </Project>
