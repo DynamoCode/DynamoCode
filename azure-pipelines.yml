@@ -30,7 +30,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: 'src/**/*.csproj;!src/Identity/**/*.csproj'
+    packagesToPack: 'src/**/*.csproj;!src/Identity/**/*.csproj;!src/CQRS/**/*.csproj;!src/DynamoCode.Application/*.csproj'
     versioningScheme: 'off'
     nobuild: true
     buildProperties: 'PackageVersion=$(Build.BuildNumber)'
